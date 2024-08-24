@@ -1,0 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #4a90e2; /* لون الخلفية */
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+@keyframes heart {
+    0% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes growShrink {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.heart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.heart span {
+    color: #ff1493; /* لون القلب */
+    font-size: 8vw;
+    transition: 0.5s;
+    animation: heart 0.9s alternate infinite, growShrink 1s infinite;
+    display: flex;
+    justify-content: center;
+}
+
+.message {
+    color: white;
+    font-size: 4vw; /* حجم الخط الافتراضي */
+    text-align: center;
+    padding: 15px;
+    line-height: 1.6;
+    display: none;
+    animation: slideIn 1s ease-out forwards;
+    max-width: 90%;
+}
+
+@media screen and (max-width: 600px) {
+    .message {
+        font-size: 6vw; /* تكبير الخط على الشاشات الصغيرة */
+        padding: 10px;
+    }
+
+    .heart span {
+        font-size: 12vw; /* تكبير القلب على الشاشات الصغيرة */
+    }
+}
